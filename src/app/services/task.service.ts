@@ -32,9 +32,11 @@ export class TaskService {
   // (tipo void porque n retorna nada)
   addTask(task: Task): void {
 
+    task.id = this.tasks.length + 1; //para tornar o id único. id dele será o número de itens que existe + 1
+
     this.tasks.push(task); //adicinou
 
-    this.saveToLocalStorage();
+    this.saveToLocalStorage(); //salvou na local storage
   }
 
   // Atualizar a tarefa 
@@ -45,7 +47,7 @@ export class TaskService {
 
   // Remover a tarefa
   removeTask(task: Task) {
-    const index = this.tasks.indexOf(task);
+    const index = this.tasks.indexOf(task); //achar a tarefa pelo índice
 
     if (index !== -1) {
       //achou
