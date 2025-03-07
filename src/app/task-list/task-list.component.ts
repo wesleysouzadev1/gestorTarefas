@@ -41,6 +41,7 @@ export class TaskListComponent {
     this.taskService.updateTasks(); //atualizar tarefas
   }
 
+  //Pesquisar Tarefas
   filterTasks(filter: string) {
 
     //se o filtro estiver diferente de vazio 

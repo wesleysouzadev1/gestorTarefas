@@ -1,4 +1,4 @@
-<app-task-filter></app-task-filter>
+<app-task-filter (taskFilter)="filterTasks($event)"></app-task-filter>
 
 <div class="container">
     <h2>A Fazer</h2>
@@ -8,7 +8,7 @@
 
             <input type="checkbox" (change)="updateTasks()" [(ngModel)]="task.completed" name="completed">
 
-            <a [routerLink]="['/taskdetails', task.id]"
+            <a [routerLink]="['/taskDetails', task.id]"
                 [ngClass]=" task.completed ? 'task-completed' : '' ">{{task.name}}</a>
 
             <div class="button-box">
